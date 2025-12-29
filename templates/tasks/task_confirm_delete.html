@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Удалить задачу - Todo App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="mb-4 text-danger">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Подтверждение удаления
+                    </h2>
+
+                    <p class="lead">Вы уверены, что хотите удалить задачу?</p>
+
+                    <div class="alert alert-warning">
+                        <h5><i class="fas fa-tasks"></i> {{ task.title }}</h5>
+                        {% if task.description %}
+                        <p class="mb-0">{{ task.description }}</p>
+                        {% endif %}
+                    </div>
+
+                    <p class="text-muted">Это действие нельзя отменить.</p>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Да, удалить
+                            </button>
+                            <a href="{% url 'task_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Отмена
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

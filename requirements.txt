@@ -1,0 +1,7 @@
+Django==5.0.1
+djangorestframework==3.14.0
+celery==5.3.6
+redis==5.0.1
+django-celery-beat==2.5.0
+python-dotenv==1.0.0
+pillow==10.2.0
