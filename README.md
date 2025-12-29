@@ -259,4 +259,6 @@ MIT License
 
 ## Автор
 
-Создано с помощью Claude Code
+Код написал Bembido
+Документацию написал Claude code
+
